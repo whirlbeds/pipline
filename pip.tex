@@ -42,49 +42,34 @@
 }
 \makeatother
 \usepackage{trace}
-\title{流水线设计日志}
+\title{流水线设计大作业}
 \author{王炜致\ 2022010542}
 \date{}
 \begin{document}
 \maketitle
-\section{算法指令与测试数据设计——基于单周期处理器}
-设置数据内存大小为256个字。准备好8个待排序数据，写入DataMemory.v中，作为测试样例。
-\begin{lstlisting}[style={verilog-style}]
-    parameter RAM_SIZE = 512;
-    parameter RAM_SIZE_BIT = 8;
-    reg [31:0] RAM_data [RAM_SIZE - 1: 0];
-    ...
-    RAM_data[0] <= 32'h00000008; // N=8
-    RAM_data[1] <= 32'h00000003; // 3
-    RAM_data[2] <= 32'h00000028; // 40
-    RAM_data[3] <= 32'h00000024; // 36
-    RAM_data[4] <= 32'hfffffffe; // -2
-    RAM_data[5] <= 32'h00000006; // 6
-    RAM_data[6] <= 32'hfffffff9; // -7
-    RAM_data[7] <= 32'h0000003a; // 58
-    RAM_data[8] <= 32'hffffffd3; // -45
+\section{实验目的}
+通过将单周期处理器改造为流水线处理器的实践操作，
+深刻领会并巩固《数字逻辑与处理器基础》课程中
+所学处理器相关知识，
+重点掌握汇编指令、冒险处理、外设等的架构与设计，
+提高汇编语言及verilog硬件描述语言的理解与编程能力，
+体会处理器的设计及优化升级过程。
+\section{设计方案}
+\subsection{总体设计}
+该流水线由《数字逻辑与处理器基础》课程中提供的单周期处理器
+改造而来；此外，还沿用了理论课中编写的排序代码。
+这两块基石的基本原理，在此不再赘述，以下展示的是利用
+单周期处理器运行排序代码的结果，旨在证明单周期处理器代码
+及排序代码（为适配处理器，略有修改）的可靠性。
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.38]{MUCHOGUSTO.png}
+    \end{figure}
+    
+在改造的过程中，
 
-    for (i = 9; i < RAM_SIZE; i = i + 1)
-        RAM_data[i] <= 32'h00000000;
-\end{lstlisting}
-
-采用之前设计的插入排序代码(insert\_sort.asm)，根据处理器实况略作修改。
-主函数体为：
-\begin{lstlisting}[style={verilog-style}]
-    addu $s7,$zero,$zero //compare_count
-    addu $a1,$zero,$zero //the address of the sequence 
-    addi $a0,$a1,4 //&buffer[1]
-    lw $a1,0($a1) //N=buffer[0]
- 
-    jal insertion_sort
- 
-    addu $a0,$zero,$zero
-    sw $s7,0($a0) //buffer[0]=compare_count
-    end:
-    j end
-\end{lstlisting}
-
-参阅MIPS文档，指令集扩充：
+\subsection{指令集扩充设计}
+根据指导书要求，参阅MIPS文档，扩充跳转与分支指令如下：
 \begin{table}[h]
     \footnotesize
 \begin{center}
@@ -106,109 +91,57 @@
 \end{center}
 \end{table}
 
-相应地修改了控制信号及模块端口。
+相应地修改了控制信号生成模块Control.v及模块端口，详见所附源代码。
 
-先用单周期处理器验证指令是否能正常运行，再改装为流水线。以下是写入InstructionMemory.v的
-排序算法的机器语言——直接在DataMemory中进行数据排序，将排序次数存入RAM\_data[0]中。
+\subsection{测试数据设计}
+设置数据内存大小为256个字。按要求，准备24个待排序正整数，
+在DataMemory.v中初始化RAM_data[1:24]，作为测试样例。RAM_data[0]
+存储的是待排序正整数的数量。
 \begin{lstlisting}[style={verilog-style}]
-    8'd0:    Instruction <= 32'h0000b821;
-    8'd1:     Instruction <= 32'h00002821;
-    8'd2:    Instruction <= 32'h20a40004;
-    8'd3:    Instruction <= 32'h8ca50000;
-    
-    8'd4:    Instruction <= 32'h0c100008;
-    8'd5:    Instruction <= 32'h00002021;
-    8'd6:    Instruction <= 32'hac970000;
-    8'd7:    Instruction <= 32'h08100007;
-    
-    8'd8:    Instruction <= 32'h20010004;
-    8'd9:    Instruction <= 32'h03a1e822;
-    8'd10:    Instruction <= 32'hafbf0000;
-    8'd11:    Instruction <= 32'h20060001;
-    
-    8'd12:    Instruction <= 32'h0c100013;
-    8'd13:    Instruction <= 32'h0c10002b;
-    8'd14:    Instruction <= 32'h20c60001;
-    8'd15:    Instruction <= 32'h14c5fffc;
-    
-    8'd16:    Instruction <= 32'h8fbf0000;
-    8'd17:    Instruction <= 32'h23bd0004;
-    8'd18:    Instruction <= 32'h03e00008;
-    8'd19:    Instruction <= 32'h20010004;
-    
-    8'd20:    Instruction <= 32'h03a1e822;
-    8'd21:    Instruction <= 32'hafbf0000;
-    8'd22:    Instruction <= 32'h00068880;
-    8'd23:    Instruction <= 32'h00918821;
-    
-    8'd24:    Instruction <= 32'h8e280000;
-    8'd25:    Instruction <= 32'h20010001;
-    8'd26:    Instruction <= 32'h00c19022;
-    8'd27:    Instruction <= 32'h22f70001;
-    
-    8'd28:    Instruction <= 32'h00128880;
-    8'd29:    Instruction <= 32'h00918821;
-    8'd30:    Instruction <= 32'h8e290000;
-    8'd31:    Instruction <= 32'h11280007;
-    
-    8'd32:    Instruction <= 32'h0128502a;
-    8'd33:    Instruction <= 32'h20010001;
-    8'd34:    Instruction <= 32'h102a0004;
-    8'd35:    Instruction <= 32'h20010001;
-    
-    8'd36:    Instruction <= 32'h02419022;
-    8'd37:    Instruction <= 32'h2001ffff;
-    8'd38:    Instruction <= 32'h1432fff4;
-    8'd39:    Instruction <= 32'h22470001;
-    
-    8'd40:    Instruction <= 32'h8fbf0000;
-    8'd41:    Instruction <= 32'h23bd0004;
-    8'd42:    Instruction <= 32'h03e00008;
-    8'd43:    Instruction <= 32'h20010004;
-    
-    8'd44:    Instruction <= 32'h03a1e822;
-    8'd45:    Instruction <= 32'hafbf0000;
-    8'd46:    Instruction <= 32'h00068880;
-    8'd47:    Instruction <= 32'h00918821;
-    
-    8'd48:    Instruction <= 32'h8e280000;
-    8'd49:    Instruction <= 32'h20010001;
-    8'd50:    Instruction <= 32'h00c19022;
-    8'd51:    Instruction <= 32'h00128880;
-    
-    8'd52:    Instruction <= 32'h00918821;
-    8'd53:    Instruction <= 32'h8e2b0000;
-    8'd54:    Instruction <= 32'h22310004;
-    8'd55:    Instruction <= 32'hae2b0000;
-    
-    8'd56:    Instruction <= 32'h20010001;
-    8'd57:    Instruction <= 32'h02419022;
-    8'd58:    Instruction <= 32'h0247602a;
-    8'd59:    Instruction <= 32'h20010001;
-    
-    8'd60:    Instruction <= 32'h102c0002;
-    8'd61:    Instruction <= 32'h1247fff5;
-    8'd62:    Instruction <= 32'h1647fff4;
-    8'd63:    Instruction <= 32'h00078880;
-    
-    8'd64:    Instruction <= 32'h00918821;
-    8'd65:    Instruction <= 32'hae280000;
-    8'd66:    Instruction <= 32'h8fbf0000;
-    8'd67:    Instruction <= 32'h23bd0004;
-    
-    8'd68:    Instruction <= 32'h03e00008;
+    parameter RAM_SIZE = 512;
+    parameter RAM_SIZE_BIT = 8;
+    reg [31:0] RAM_data [RAM_SIZE - 1: 0];
+    ...
+    if (reset) begin
+            RAM_data[0] <= 32'h00000018; //numbers=24
+            
+            RAM_data[1] <= 32'h00000003; 
+            RAM_data[2] <= 32'h00000028; 
+            RAM_data[3] <= 32'h00000024; 
+            RAM_data[4] <= 32'h0000020B; 
+            RAM_data[5] <= 32'h00003406; 
+            RAM_data[6] <= 32'h00000A0A; 
+            RAM_data[7] <= 32'h0000F03A; 
+            RAM_data[8] <= 32'h0000001B; 
+            
+            RAM_data[9] <= 32'h00000001; 
+            RAM_data[10] <= 32'h00009021; 
+            RAM_data[11] <= 32'h00000216; 
+            RAM_data[12] <= 32'h00000072; 
+            RAM_data[13] <= 32'h00000059; 
+            RAM_data[14] <= 32'h00000007; 
+            RAM_data[15] <= 32'h000003E1; 
+            RAM_data[16] <= 32'h00000B40; 
+            
+            RAM_data[17] <= 32'h00000034; 
+            RAM_data[18] <= 32'h0000009F; 
+            RAM_data[19] <= 32'h000000C8;
+            RAM_data[20] <= 32'h0000000D; 
+            RAM_data[21] <= 32'h000000B1; 
+            RAM_data[22] <= 32'h000000E9; 
+            RAM_data[23] <= 32'h0000003a; 
+            RAM_data[24] <= 32'h0000001B; 
+        
+            for (i = 25; i < RAM_SIZE; i = i + 1)
+                RAM_data[i] <= 32'h00000000;
 \end{lstlisting}
+\subsection{MIPS指令设计}
+MIPS指令主要分为两个部分：排序功能实现部分以及软件形式数显控制部分。
 
-排序效果良好，如下：
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.35]{sicy.png}
-    \end{figure}
-根据验收要求，进一步验证，对24个正整数排序如下：
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.38]{MUCHOGUSTO.png}
-    \end{figure}
+排序部分使用《数字逻辑与处理器基础》课程中设计的插入排序算法，详见所附源代码。排序
+完成后，
+\subsection{WELOG实验板行为设计}
+
 \newpage
 \section{流水线改造（无冒险处理）}
 \begin{figure}[H]
