@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.2.26)  24 JUL 2024 16:24
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.2.26)  26 JUL 2024 22:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -560,20 +560,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count317
+(pip.toc)
+\tf@toc=\write3
+\openout3 = `pip.toc'.
+
+ [1
+
+]
 File: MUCHOGUSTO.png Graphic file (type bmp)
 <MUCHOGUSTO.png>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-pip.tex:98: Missing $ inserted.
-<inserted text> 
-                $
-l.98 在DataMemory.v中初始化RAM_
-                          data[1:24]，作为测试样例。RAM_data[0]
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-(D:\MikTeX\tex/latex/listings\lstlang1.sty
+File: panor.png Graphic file (type bmp)
+<panor.png>
+ [2] (D:\MikTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 (D:\MikTeX\tex/latex/listings\lstlang2.sty
@@ -582,152 +580,105 @@ File: lstlang2.sty 2023/02/27 1.9 listings language file
 (D:\MikTeX\tex/latex/listings\lstlang3.sty
 File: lstlang3.sty 2023/02/27 1.9 listings language file
 )
-pip.tex:100: Missing $ inserted.
-<inserted text> 
-                $
-l.100 \begin{lstlisting}[style={verilog-style}]
-                                               
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-pip.tex:100: Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.100 \begin{lstlisting}[style={verilog-style}]
-                                               
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-pip.tex:100: Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.100 \begin{lstlisting}[style={verilog-style}]
-                                               
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-pip.tex:100: Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.100 \begin{lstlisting}[style={verilog-style}]
-                                               
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-Missing character: There is no ， in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 作 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 为 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 测 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 试 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 样 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 例 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 存 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 储 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 的 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 是 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 待 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 排 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 序 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 正 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 整 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 数 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 的 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 数 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 量 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman10-regular]:mapping=tex-text;!
-
-Overfull \hbox (50.96588pt too wide) in paragraph at lines 97--100
-[]\TU/SimSun(0)/m/n/10 设 置 数 据 内 存 大 小 为 \TU/lmr/m/n/10 256 \TU/SimSun(0)/m/n/1
-0 个 字。|  按 要 求，|  准 备 \TU/lmr/m/n/10 24 \TU/SimSun(0)/m/n/10 个 待 排 序 正 整 数，|  在
- \TU/lmr/m/n/10 DataMemory.v \TU/SimSun(0)/m/n/10 中 初 始 化 \TU/lmr/m/n/10 RAM$[]
-\OML/cmm/m/it/10 ata\OT1/cmr/m/n/10 [1 : 24][][][][][][][][]\OML/cmm/m/it/10 RA
-M[]ata\OT1/cmr/m/n/10 [0][][][][][][][][][][][][][][][][][][]$ 
- []
-
-[1
-
-]
-pip.tex:100: Undefined control sequence.
-\lst@GetLineInterval ...r \lst@GLI \lst@linerange 
-                                                  \@nil 
-l.100 \begin{lstlisting}[style={verilog-style}]
-                                               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Runaway argument?
-\@nil \lst@ifsensitive \else \let \lst@KeywordTest \lst@KEYWORDTEST \let \ETC.
-pip.tex:107: Paragraph ended before \lst@GLI was complete.
-<to be read again> 
-                   \par 
-l.107 
-      
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-pip.tex:108: Missing $ inserted.
-<inserted text> 
-                $
-l.108             RAM_
-                      data[1] <= 32'h00000003;
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-pip.tex:116: Missing $ inserted.
-<inserted text> 
-                $
-l.116 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
+(fontspec)             doesn't exist).
 
 
-Overfull \hbox (91.04453pt too wide) in paragraph at lines 108--116
-[]\TU/lmr/m/n/10 RAM$[]\OML/cmm/m/it/10 ata\OT1/cmr/m/n/10 [1] \OML/cmm/m/it/10
- <\OT1/cmr/m/n/10 = 32[]\OML/cmm/m/it/10 h\OT1/cmr/m/n/10 00000003; \OML/cmm/m/
-it/10 RAM[]ata\OT1/cmr/m/n/10 [2] \OML/cmm/m/it/10 <\OT1/cmr/m/n/10 = 32[]\OML/
-cmm/m/it/10 h\OT1/cmr/m/n/10 00000028; \OML/cmm/m/it/10 RAM[]ata\OT1/cmr/m/n/10
- [3] \OML/cmm/m/it/10 <\OT1/cmr/m/n/10 = 32[]\OML/cmm/m/it/10 h\OT1/cmr/m/n/10 
-00000024; \OML/cmm/m/it/10 RAM[]ata\OT1/cmr/m/n/10 [4] \OML/cmm/m/it/10 <\OT1/c
-mr/m/n/10 = 32[]\OML/cmm/m/it/10 h\OT1/cmr/m/n/10 0000020\OML/cmm/m/it/10 B\OT1
-/cmr/m/n/10 ; \OML/cmm/m/it/10 RAM[]ata\OT1/cmr/m/n/10 [5] \OML/cmm/m/it/10 <\O
-T1/cmr/m/n/10 =
- []
-
-pip.tex:117: Missing $ inserted.
-<inserted text> 
-                $
-l.117             RAM_
-                      data[9] <= 32'h00000001;
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-pip.tex:125: Missing $ inserted.
-<inserted text> 
-                $
-l.125 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+Package fontspec Info: Could not resolve font "FangSong/B" (it probably
+(fontspec)             doesn't exist).
 
 
-Overfull \hbox (107.9578pt too wide) in paragraph at lines 117--125
-[]\TU/lmr/m/n/10 RAM$[]\OML/cmm/m/it/10 ata\OT1/cmr/m/n/10 [9] \OML/cmm/m/it/10
- <\OT1/cmr/m/n/10 = 32[]\OML/cmm/m/it/10 h\OT1/cmr/m/n/10 00000001; \OML/cmm/m/
-it/10 RAM[]ata\OT1/cmr/m/n/10 [10] \OML/cmm/m/it/10 <\OT1/cmr/m/n/10 = 32[]\OML
-/cmm/m/it/10 h\OT1/cmr/m/n/10 00009021; \OML/cmm/m/it/10 RAM[]ata\OT1/cmr/m/n/1
-0 [11] \OML/cmm/m/it/10 <\OT1/cmr/m/n/10
+Package fontspec Info: Could not resolve font "FangSong/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
+(fontspec)             with options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+ [3]
+File: reguse.png Graphic file (type bmp)
+<reguse.png>
+ [4]
+File: fwtr.png Graphic file (type bmp)
+<fwtr.png>
+File: fwtrx.png Graphic file (type bmp)
+<fwtrx.png>
+File: reg.png Graphic file (type bmp)
+<reg.png>
+ [5]
+File: haddaz.png Graphic file (type bmp)
+<haddaz.png>
+File: hadd.png Graphic file (type bmp)
+<hadd.png>
+ [6]
+File: bgtzz.png Graphic file (type bmp)
+<bgtzz.png>
+File: bgtz.png Graphic file (type bmp)
+<bgtz.png>
+File: load.png Graphic file (type bmp)
+<load.png>
+ [7]
+File: add.png Graphic file (type bmp)
+<add.png>
+File: addon.png Graphic file (type bmp)
+<addon.png>
+File: lstore.png Graphic file (type bmp)
+<lstore.png>
+File: fo.png Graphic file (type bmp)
+<fo.png>
+File: specialls.png Graphic file (type bmp)
+<specialls.png>
+File: hdl.png Graphic file (type bmp)
+<hdl.png>
+ [8]
+File: mult.png Graphic file (type bmp)
+<mult.png>
+File: exter.png Graphic file (type bmp)
+<exter.png>
+File: abc.png Graphic file (type bmp)
+<abc.png>
+ [9]
+[10] [11] [12] [13]
+File: res.png Graphic file (type bmp)
+<res.png>
+File: space.png Graphic file (type bmp)
+<space.png>
+File: num.png Graphic file (type bmp)
+<num.png>
+File: par.png Graphic file (type bmp)
+<par.png>
+ [14]
+File: sing.png Graphic file (type bmp)
+<sing.png>
+File: clcc.png Graphic file (type bmp)
+<clcc.png>
+ [15]
+File: clcs.png Graphic file (type bmp)
+<clcs.png>
+ [16]
+File: k.jpg Graphic file (type bmp)
+<k.jpg>
+ [17] (pip.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2022/08/05>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 11326 strings out of 409673
+ 275584 string characters out of 5781809
+ 1987630 words of memory out of 5000000
+ 33164 multiletter control sequences out of 15000+600000
+ 563847 words of font info for 86 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 93i,9n,97p,421b,1828s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on pip.pdf (17 pages).
